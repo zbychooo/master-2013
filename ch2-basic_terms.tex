@@ -1,0 +1,109 @@
+\chapter{Basic terms} \label{roz:basic_terms}
+
+\textit{This chapter introduces and explains the basic terms that have been used in the thesis.}
+
+\subsection*{Software metrics}
+Software metrics are special kind of measurements specified for software used to identify quality of code, the complexity of the system and cost of maintenance and flexibility. The purpose of software metrics is to investigate and evaluate the quality of provided software and encourage developers to improve the quality of provided products~\cite{metrics}.
+
+\subsection*{Software engineering}
+Software engineering provides the theoretical foundations for building software and focuses on implementing the software in a controlled and scientific way.  It describes the collection of techniques that apply an engineering approach to the implement and support of software products. Software engineering activities include managing, costing, planning, modelling, analysing, specifying,  designing, implementing, testing, and maintaining. Engineering approach means that each activity is understood and controlled, so that there could be no surprises as the software is specified, designed, built, and maintained \cite{rigorous}.
+
+\subsection*{Object-oriented metrics}
+The rise in popularity of object oriented programming create a need to prepare metrics that are able to measure and evaluate aspects characteristic for objectivity: inheritance, polymorphism, encapsulation, cohesion and coupling. First set of object-oriented metrics were proposed by S.R. Chidamber and C.F. Kemerer~\cite{alain}.
+
+\subsection*{Object-oriented programming paradigm}
+Object-oriented programming paradigm is a concept of objects that have attributes (fields) and associated behaviour (procedures, methods, functions). Generally, the object is a instance of class. Class is a representation of abstraction and its instances are used to interact with each other. Nowadays, the most popular object-oriented programming languages are C++, Java, C Sharp  and Objective-C.  
+
+\begin{quote}
+\textit{Object-oriented programming is a method of implementation in which programs are organized as cooperative collections of objects, each of which represents an instance of some class, and whose classes are all members of a hierarchy of classes united via inheritance relationships} \cite{booch}.
+\end{quote}
+
+Object-oriented programming makes code easier to organize, understand and managed. The modification of code could be applied without affecting other aspect of system. It is easier to introduce update and upgrades and when the system grows over the years it is more manageable. It allows also to split the responsibility of functionality of code by several developers, so they could work individually for one system but for another components of this system~\cite{booch}.  
+
+\subsection*{Inheritance}
+Inheritance is a relation between classes where one class (called child, derived or subclass)  is extended by another class (called parent, base  or super class). This relationship rises a hierarchy where subclasses could inherit attributes and behaviours (methods) from pre-existing classes. The semantics of class inheritance could vary from language to language, but commonly the subclass automatically inherits the instance variables and member functions of its superclass. Some languages enable to inherit from many classes and the access to attributes and methods from parent class are defined by set of access modifiers (for example in Java language are public, private, protected and default modifiers).  The superclass defines a common interface and foundational functionality, which specialized subclasses could inherit, modify, and implement. The methods and attributes inherited by a subclass could be reused in the subclass. A reference to an instance of a class might be referring one of its subclasses. The actual class of the object being referenced is impossible to predict at compile-time. A uniform interface is used to invoke the member functions of objects of a number of different classes. Subclass might replace superclass functions with entirely new functions by naming its method the same as methods in super class (it is called overriding).  In some languages a class could be defined as unable to be inherited by adding to class special declaration (for Java it is a \textit{``final''} keyword and \textit{``sealed"} for C Sharp) Such word added to declaration of class restricts the re-usability of all methods and attributes of this class. Similar functionality could be also applied to some attributes or methods  from given class. 
+Introducing inheritance mechanism enabled to limit number of duplicated code and separate behaviours from super class and enable to detail it in subclass~\cite{SCJP}.
+
+\subsection*{Polymorphism}
+Polymorphism refer to the biological principle in which organism or species could have different forms or stages. This principle has also its use in object oriented programming. Subclass of parent class can define their own unique behaviours (methods) and what is more, share the same of functionality of the parent class~\cite{JavaDoc}.
+
+There are different kinds of polymorphism:
+\begin{itemize}
+\item \textit{``ad hoc'' polymorphism} is supported by many languages as function overloading and it means that method could be applied to arguments of different types.
+\item \textit{parametric polymorphism} is marked when code is written without mentioned of any specific type and thus could be use with any number of types.
+\item\textit{inclusion polymorphism (sub typing)} is a concept where a name might denote instances of many different classes as long as they are related by some common superclass~\cite{booch}.
+\end{itemize}
+
+General, polymorphism could refer to \textit{``many shapes''}. It is means ability to request the same operations, but performed by a wide range of different types of things. In OOP, the polymorphisms is achieved by using many different techniques named method overloading, operator overloading and method overriding.
+
+\subsection*{Encapsulation}
+Encapsulation is a mechanism for restricting access to some of object`s methods and attributes. It \textit{``is the process of compartmentalizing the elements of an abstraction that constitute
+its structure and behaviour; encapsulation serves to separate the contractual interface of an
+abstraction and its implementation''}~\cite{booch}.
+This mechanism provides explicit kind of barrier which leads to a clear separation of access and non-accessible part of implementation. In practise it means that class should have two parts: an interface and implementation. The interface of the class presents only scheme, layout or list of instance of class behaviour. The implementation asserts the mechanism that allows realization of class behaviour. 
+
+Another important assumption of encapsulation is hiding class arguments. It is realised by forbidding direct access to class`s arguments (using access modifiers) and providing methods allowing setting and getting its values. It prevents unauthorized parties direct access to them~\cite{SCJP}.
+
+\subsection*{Coupling}
+Coupling is the measure of the strength of association established by a connection from one class to another class. Strong coupling complicates a system because system is harder to understand, revise, change, or correct. This complexity could be reduced by designing system with weak dependency between classes.   
+
+Coupling is the term borrowed from structural programming but is also applicable to object-oriented analysis and design. However the concepts of coupling does not refer to inheritance, (inheritance is in certain sense a type of coupling) because introduces significant improvement of presenting classification abstractions and dependencies in object oriented paradigm~\cite{booch}.
+
+\subsection*{Cohesion}
+The idea of cohesion is also taken from structural programming. Cohesion measures the degree of connection between objects in a single component. The one form of cohesion is coincidental cohesion where entirely unrelated abstractions are thrown into the same class, package or component. Another form of cohesion is functional cohesion. Elements of a class or component work together to provide some well-bounded behaviour~\cite{booch}.
+
+\subsection*{Artefacts} 
+Artefacts are used as the simplest form of measurement of source code. As the artefact it could be treated line(s) of code, field(s) of code, methods, classes, interfaces, components, packages. Basing on such artefacts, the quality of system could be evaluated. 
+
+\subsection*{Graph theory}\label{section:graph_theory}
+\subsubsection*{Simple graph}
+A simple graph G is defined as a pair of sets (V, E), where:
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}\vspace{-7mm}
+\item V is a finite non empty set of vertices, and
+\item E is a set of pairs of vertices, called edges. 
+\end{itemize}\vspace{-5mm}
+It is often represented by $G = (V, E)$~\cite{graph}.
+
+\subsubsection*{Chain}
+In a simple graph $G = (V, E)$, a chain c is a finite sequence of vertices: $v_{0}, v_{1}, \cdots , v_{m}$ such that, for all i with $0 \textless= i \textless m, v_{i}, v_{i + 1}$ is an element of $E$.
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}\vspace{-7mm}
+\item chain is represented by $c = [v_{0}, v_{1}, \cdots , x_{m}]$.
+\item length of the path $c$ is the integer $m$, and it is represented by $l = m(c)$ (\cite{alain}).
+\end{itemize}
+
+\subsubsection*{Connected graph}
+A graph G is connected if, for all x and for all y [vertices], there exists a chain connecting x and y.  A graph that is not connected could be divided into connected components.
+
+\begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}\vspace{-7mm}
+\item cycle graph - path that begins and ends with the same vertex.
+\item simple cycle - cycle that has a length of at least 3, and in which the beginning vertex only appears once more, as the ending vertex, and the other vertices appear only once (\cite{alain},~\cite{graph}).
+\end{itemize}
+
+\subsubsection*{Directed graph}
+A directed graph (or digraph) is a set of vertices and a collection of directed edges that each connects an ordered pair of vertices. It is said that a directed edge points from the first vertex in the pair and points to the second vertex in the pair. It is used the names 0 through V-1 for the vertices in a V-vertex graph~\cite{directedGraph}.
+
+
+\subsubsection*{Strongly connected graph}
+Strongly Connected Graph is kind of a directed graph that has a path from each vertex to every other vertex~\cite{alain}. 
+
+\subsection*{Integrated Development Environment (IDE)}
+\ac{IDE} is a software application that is used to create, modify, and test the software. They provide complex functionality that enable to edit source code, compile or interpreter the code, provide debug tool, create graphical user interface, create database and components. One of most desirable feature of \ac{IDE} is integration with intelli-sense mechanism.  
+
+The concept of \ac{IDE} evolved from simple command based software which was not as useful as menu-driven software. Modern \ac{IDE}s are mostly used in the context of visual programming, where applications are quickly created by moving programming building blocks or code nodes that generate flowchart and structure diagrams, which are compiled or interpreted.
+
+Selecting a good \ac{IDE} is based on factors, such as language support, operating system (OS) needs and costs associated with using the \ac{IDE} etc.
+
+There are several popular \ac{IDE}s:
+\begin{itemize}
+\item Microsoft Visual Studio -- definitive \ac{IDE} for Windows application development covers languages like C++, C Sharp and VB.NET
+\item Netbeans -- open source software providing programming tools for Java language  
+\item Eclipse -- firstly it was framework written in Java used to create rich client application, later rebuild to create application in Java. Various set of plug-ins extends its functionality for other languages.  
+\item IntelliJ -- it is a Java \ac{IDE} by JetBrains, available as an Apache 2 Licensed community edition and commercial edition.
+\end{itemize}
+
+
+
+
+
+
+
