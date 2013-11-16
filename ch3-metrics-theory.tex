@@ -532,32 +532,30 @@ where $TM$ - number of method in class, $CC_{i}$ - cyclomatic complexity of \tex
 
 \subparagraph*{LCOM1} is a difference between number of pairs of methods that refers to different attributes over the pair of methods referring to at least one common attribute. 
 
+Let the class have $n$ methods $m_{1}, m_{2}, \cdots, m_{n}$ where $I_{j}$ is a set of attributes used by $m_{j}$ method. It could be defined: $P=\left\{ \left( { I }_{ i },{ I }_{ j } \right) :{ I }_{ i }\cap { I }_{ j }=0 \right\}$ and $Q=\left\{ \left( { I }_{ i },{ I }_{ j } \right) :{ I }_{ i }\cap { I }_{ j }\neq 0 \right\}$, so: 
+
 \begin{equation}
-LCOM1=\begin{cases} P-Q\quad if\quad P>Q \\ 0\quad otherwise \end{cases}
+LCOM1=P-Q\quad if\quad P>Q\quad or\quad LCOM1=0\quad otherwise
 \end{equation}
 
+High value indicates that responsibility for given class is too high and class should be divided into smaller, because it is more difficult to test and maintain given class. During next years the \ac{LCOM} metric has been several times redefined. 
 
+\subparagraph*{LCOM2} is represented as per cent of methods that do not have access to individual class attributes. If number of method or attributes is equal to zero, then LCOM2 is also not defined and is equal to zero. 
 
-\subparagraph*{LCOM2}
-\subparagraph*{LCOM3}
-\subparagraph*{LCOM4}
+\begin{equation}
+LCOM2=1-\frac { \sum _{ i=1 }^{ TM }{ { Ma }_{ i } }  }{ TM\times TA } 
+\end{equation}
+where $TM$ is number of method in class, $TA$ is number of attributes in class and $Ma_{i}$ is number of methods that refers to $a_{i}$ attributes. The results of this metric are in interval between 0 and 1. The lowest value, the better is. 
 
+\subparagraph*{LCOM3} is a relative number of methods that do not refer to individual class attributes.
 
+\begin{equation}
+LCOM3=\frac { TM-\frac { \sum _{ i=1 }^{ TM }{ { Ma }_{ i } }  }{ TA }  }{ TM-1 } 
+\end{equation}
 
+where $TM$ is number of method in class, $TA$ is number of attributes in class and $Ma_{i}$ is number of methods that refers to $a_{i}$ attributes. The results are in interval between 0 and 2. If number of attributes is equal to 0 or number of methods is 1 then metric is not defined. The values greater than 1 indicates lack of cohesion and probability of dividing class on smaller ones in future. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subparagraph*{LCOM4} is number of disjoint sets of local methods. Neither of these two sets disjonts. Each two methods within the same set have access to at least one common attributes. Value of this metric is between 0 and $N$ where $N$ is a natural number. Optimal value is equal to 1. For greater values it is need to divide class on smaller classes. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Metrics for Object-Oriented Design (MOOD)}
@@ -694,4 +692,4 @@ There are also many other software metrics that are commonly used to preventing 
 \textbf{\ac{NOA}}  calculates the number of fields declared in class or interface.
 
 \section{Summary}
-
+[dodac zawartosc ;)]
