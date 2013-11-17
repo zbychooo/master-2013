@@ -3,34 +3,6 @@
 \textit{This chapter describes the tools (part of them are plugins for Eclipse IDE) that implements software metrics. Part of them are command-line applications. There are presented not only professional tools provided by software companies, but also created by academic teams and individual developers. The final conclusions and indication of the best tools are in the summary of the chapter. The tools are presented in alphabetical order.} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{STAN - Structure Analysis for Java} 
-STAN - Structure Analysis for Java is a tool used to structure analysis for Java language. It visualizes project design and report its flaws. It supports in code understanding and measure the quality. STAN offers also set of selected metrics that underline essential aspects of code quality. All faults are clearly visualized what is a key feature for non technical target clients. This tool is used by developers to take care of code quality from the beginning. It could be used by project managers as a tool for monitoring and reporting. 
-
-STAN tool could be downloaded from official website\footnote{\url{http://www.stan4j.com/}}. It is distributed under the community license option without installing a license key for projects up to 100 classes. There are two variants of product: either standalone application or Eclipse IDE extension.
-
-One of the key feature of STAN is computing several metrics. It maps some kinds of artefacts to numbers. The implemented metrics are:
-
-\begin{itemize}
-\item counting metrics.
-\item Estimated Lines of Code
-\item McCabe's Cyclomatic Complexity
-\item Average Component Dependency (ACD), Fat and Tangled
-\item Robert C. Martin metrics
-\item Chidamber \& Kemerer metrics
-\end{itemize}
-
-Metric violation are prioritized  by weighting its rating with the amount of the artifact's underlying code. The results are showed in the violations view (Figure~\ref{fig:stan}).
-
-Another interesting feature is customizable reports generation. It gives a detailed lists of metric violations in colourful visualized pie chars and underline bad trends in project design\footnote{Sample report is presented here:~\url{http://stan4j.com/sample-report.html}}\cite{stan}.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.55]{img/stan.png} 
-	\caption{Screenshot from STAN - Structure Analysis for Java plugin for Eclipse IDE.}		
-	\label{fig:stan}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{C and C++ Code Counter (CCCC)}
 CCCC is a command line tool developed by Tim Littlefair. It is freeware and open source interface designed for Linux and Windows platform. Firstly, CCCC were implemented to process C-family language files (C++ and ANSI C), however last versions are able to process Java source files as well. The installation and running process on the command line is rather easy. CCCC checks the extension of name of file, and if the extension is known and indicates a supported language, the appropriate parser runs file analysis. Final output of the analysis is generated in HTML and XML files. Despite the fact, that HTML summary is not eye-catching, it is a readable and clear summary of analysis made by CCCC tool (Figures~\ref{fig:cccc1} and \ref{fig:cccc2}). The XML version is rather difficult to read, analyse and understand (Listing~\ref{ccccXml}). 
 
@@ -73,23 +45,73 @@ CCCC could be downloaded from \textit{sourceforge.net} servers\footnote{CCCC dow
 ...
 </CCCC_Project>
 \end{lstlisting}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CKJM - Chidamber and Kemerer Metrics}
+\textit{CKJM} is an open source command-line tool which calculates object-oriented metrics proposed by by Chidamber and Kemerer. This tool processes the byte-code of compiled Java files. 
 
-\section{SourceMonitor (SM)}
-SourceMonitor (SM) is measurement metric tool developed by Campwood software. It has graphical user interface and is a freeware closed-source software which runs only on Windows. There are five different views available to display the results: checkpoint, charts, project, details and method view (Figure~\ref{fig:sourcemonitor}). There are multiple supported languages like Visual Basic, HTML, C, C++, Java, and .NET platform languages family. The results of measurements are exported to XML or CSV format files. The implemented metrics are \ac{LoC}, the ratio of methods per Class, number of classes and interfaces, Cyclomatic Complexity, the percent ratio of statements and \ac{LoC} and percent ratio of comments lines (\cite{indie}).
+To run \textit{CKJM} the following line need to be executed\footnote{\textit{CKJM} tool could be download from: \url{http://www.spinellis.gr/sw/ckjm/doc/indexw.html}}:
 
-SourceMonitor is available to download on official website\footnote{\url{http://www.campwoodsw.com/sourcemonitor.html}}.
+\begin{verbatim} 
+java -jar [localization of ckjm.jar] [localization of *.class files] 
+\end{verbatim} 
+
+The command's output will be a list of class names (prefixed by the package they are defined in), followed by the corresponding metrics for that class: \ac{WMC}, \ac{DIT}, \ac{NOC}, \ac{CBO}, \ac{RFC}, \ac{LCOM}, \ac{Ce}, and NPM - number of public methods for a class (last two are not \ac{CK metrics}). The exemplary output is presented below:
+
+\begin{verbatim} 
+Algorithms.NeuralSimulatedAnnealing 6 1 0 3 28 0 0 3 2 0,7667 328 0,8333 
+0 0,0000 0,3333 0 0 52,6667
+ ~ private void changeWeights(): 4
+ ~ private double[] changeWeightsArray(double[] weights): 2
+ ~ private void feedforward(): 2
+ ~ public void annealNetwork(): 4
+ ~ public void <init>(NeuronNetworkLibrary.Network network, long cycles, double startingTemp, double stopTemp): 1
+ ~ private void revertWeights(): 4
+\end{verbatim} 
+
+The form of results presentation is not rather intelligible and comparing to other tools it is rather out-of-date.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cobertura}
+Cobertura\footnote{Official webpage: \url{http://cobertura.github.io/cobertura/}} is a freeware tool that checks code coverage metric, but it implements also Cyclomatic Complexity.  It uses compiled Java class files and generates output report in XML or HMTL output. Reports shows percentage test coverage on different levels like packages, classes and methods (Figure~\ref{fig:coverage1}). 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.4]{img/sourcemonitor.png} 
-	\caption{SourceMonitor metric tool}		
-	\label{fig:sourcemonitor}
+	\includegraphics[scale=0.5]{img/coverage.jpg} 
+	\caption{HTML report generated by Cobertura (image source: \url{http://tnijurl.com/58c65644bde2/}).}		
+	\label{fig:coverage1}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{JHawk}
+Cobertura is run with use of command line or ant task. It is distributed also as a plugin for Eclipse IDE and is named eCobertura (Figure~\ref{fig:coverage2}). 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{img/screenshot_ecobertura_01.png}  
+	\caption{eCobertura as a plug-in for Eclipse IDE (image source: \url{http://ecobertura.johoop.de/}).}		
+	\label{fig:coverage2}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Eclipse Metrics Plug-in 1.3.6}
+Eclipse Metrics Plug-in is an open source metrics calculator plug-in for the Eclipse IDE. It detects
+cycles in package, dependencies types and measures various metrics like size metrics (Lines of Code, Number of Classes, Number of Children, Number of Interfaces), Martin metrics and \ac{CK metrics}. 
+
+The plug-in is available to download from \textit{sourceforge.net} servers\footnote{Eclipse Metrics Plug-in 1.3.6 official page: \url{http://metrics.sourceforge.net/}.}. The result of measurement are presented in \textit{Metrics View} where red colour shows which metrics values exceed assumed values and blue one shows which values are accepted (Figure~\ref{fig:eclipsemetrics}). The whole interface is configurable and is handy tool for developers during implementation. 
+
+The results of metrics could be exported to XML file. The scope of the report (project, package, etc.) is selected from context menu.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{img/eclipse-plugin.png} 
+	\caption{Eclipse Metrics Plug-in}		
+	\label{fig:eclipsemetrics}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{JHawk}
 JHawk is shareware metric tool for Java language. It is distributed as stand-alone GUI application or a command line application or as an Eclipse plugin. The results of measurement is provided in commonly used formats: CSV, XML and HTML. Demo version of JHawk could be downloaded from official website\footnote{JHawk official website - \url{http://www.virtualmachinery.com/jhawkprod.htm}}.
 
 JHawk is advanced measurement tool. The GUI or plugin version provides a dashboard tab which gives overview of the metrics at System, Package and Class level, so the interface is really intuitive and user-friendly. The data are presented in readable and intelligible way. What is more, this tool enables also to create own metrics.
@@ -110,40 +132,66 @@ JHawk implements size metrics: Lines of Code, Lines of Comments, Lines of Statem
 	\label{fig:jhawk2}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Eclipse Metrics Plug-in 1.3.6}
-Eclipse Metrics Plug-in is an open source metrics calculator plug-in for the Eclipse IDE. It detects
-cycles in package, dependencies types and measures various metrics like size metrics (Lines of Code, Number of Classes, Number of Children, Number of Interfaces), Martin metrics and \ac{CK metrics}. 
-
-The plugin is available to download from \textit{sourceforge.net} servers\footnote{Eclipse Metrics Plug-in 1.3.6 official page: \url{http://metrics.sourceforge.net/}.}. The installation instruction is clear and simple. Red colour in \textit{Metrics View} shows which metrics values exceed assumed values. Blue colour shows which values are accepted (Figure~\ref{fig:eclipsemetrics}). The whole interface is configurable and is handy tool for developers during implementation. 
-
-The results of metrics could be exported to XML file. The scope of the report (project, package, etc.) is selected from context menu.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.45]{img/eclipse-plugin.png} 
-	\caption{Eclipse Metrics Plug-in}		
-	\label{fig:eclipsemetrics}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{JDepend}
-[opis]
-
-\section{CKJM - Chidamber and Kemerer Metrics}
-[opis]
-
-\section{Cobertura}
-[opis]
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{RefractorIT}
 [opis]
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sonar}
 [opis]
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SourceMonitor}
+SourceMonitor (SM) is measurement metric tool developed by Campwood software. It has graphical user interface and is a freeware closed-source software which runs only on Windows. There are five different views available to display the results: checkpoint, charts, project, details and method view (Figure~\ref{fig:sourcemonitor}). There are multiple supported languages like Visual Basic, HTML, C, C++, Java, and .NET platform languages family. The results of measurements are exported to XML or CSV format files. The implemented metrics are \ac{LoC}, the ratio of methods per Class, number of classes and interfaces, Cyclomatic Complexity, the percent ratio of statements and \ac{LoC} and percent ratio of comments lines (\cite{indie}).
+
+SourceMonitor is available to download on official website\footnote{\url{http://www.campwoodsw.com/sourcemonitor.html}}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{img/sourcemonitor.png} 
+	\caption{SourceMonitor metric tool}		
+	\label{fig:sourcemonitor}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{STAN - Structure Analysis for Java} 
+STAN - Structure Analysis for Java is a tool used to structure analysis for Java language. It visualizes project design and report its flaws. It supports in code understanding and measure the quality. STAN offers also set of selected metrics that underline essential aspects of code quality. All faults are clearly visualized what is a key feature for non technical target clients. This tool is used by developers to take care of code quality from the beginning. It could be used by project managers as a tool for monitoring and reporting. 
+
+STAN tool could be downloaded from official website\footnote{\url{http://www.stan4j.com/}}. It is distributed under the community license option without installing a license key for projects up to 100 classes. There are two variants of product: either standalone application or Eclipse IDE extension.
+
+One of the key feature of STAN is computing several metrics. It maps some kinds of artefacts to numbers. The implemented metrics are:
+
+\begin{itemize}
+\item counting metrics.
+\item Estimated Lines of Code
+\item McCabe's Cyclomatic Complexity
+\item Average Component Dependency (ACD), Fat and Tangled
+\item Robert C. Martin metrics
+\item Chidamber \& Kemerer metrics
+\end{itemize}
+
+Metric violation are prioritized  by weighting its rating with the amount of the artifact's underlying code. The results are showed in the violations view (Figure~\ref{fig:stan}).
+
+Another interesting feature is customizable reports generation. It gives a detailed lists of metric violations in colourful visualized pie chars and underline bad trends in project design\footnote{Sample report is presented here:~\url{http://stan4j.com/sample-report.html}}\cite{stan}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.55]{img/stan.png} 
+	\caption{STAN - Structure Analysis for Java plug-in for Eclipse IDE.}		
+	\label{fig:stan}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%Dodac trzy/dwa z tych dokumentów!!!
 \section{Summary}
+
+%\section{JDepend}
+%[opis]-delete
 
 %O tych poniżej może tylko wspomnieć¸ ale niekoniecznie.
 %\section{Findbugs}
