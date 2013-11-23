@@ -267,6 +267,8 @@ Summing up, the lines of code metric is one of the oldest and most common forms 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Code coverage}
+\label{sec:codecoverage}
+
 Edsger Dijkstra said: \textit{``Testing never proves the absence of faults, it only shows their presence''}.
 The code coverage analysis is a measurement used in software testing to describe the degree to which the source code of a program has been tested. There are number of criteria (metrics) that determines how well the tests exercise the code.
 
@@ -398,6 +400,7 @@ It is worthy to mention that these kind of metrics are only supportive way of mo
 Computational complexity has also impact on the software, so if the complex algorithms are used in software, there is a need to control the overall efficiency of program execution. The complexity metrics provide the information how complex the implemented methods in code are. The sections below describes the basic and commonly used complexity metrics. 
  
 \subsection{McCabe's cyclomatic complexity}
+\label{sec:cyclomatic}
 McCabe has based its metrics on analysis of some measurement concepts in graph theory. He has  transferred these concepts into domain of software measurement. The terms connected to graph theory have been explained in Chapter~\ref{section:graph_theory} in section: \textit{Graph theory}. The term \textit{cyclomatic number} is explained below (definition from:~\cite{alain}).
 
 \begin{quote}
@@ -657,6 +660,7 @@ D = A + I - 1
 The ideal value is $D=0$, what means that the more abstract a package is, the more stable it should be because it should have many clients that depend on its abstractions.The desirable value should as low as possible~\cite{martin}. Any package that is not closed to zero is considered as unbalanced and should be reimplemented in order to be more reusable and less sensitive to changes.
 
 \section{Other software metrics}
+\label{sec:other-metrics}
 There are also many other software metrics that are commonly used to preventing the faults in software. They increase the quality of code and have been implemented in plugins in Eclipse IDE described in Chapter~\ref{roz:metrics-tools}. The alphabetic list presents short description of each of them:  
 
 \textbf{\ac{CLOC}} counts all lines that contain regular comments and Javadoc comments.

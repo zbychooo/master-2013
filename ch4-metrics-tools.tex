@@ -75,7 +75,7 @@ The form of results presentation is not rather intelligible and comparing to oth
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cobertura}
-Cobertura\footnote{Official webpage: \url{http://cobertura.github.io/cobertura/}} is a freeware tool that checks code coverage metric, but it implements also Cyclomatic Complexity.  It uses compiled Java class files and generates output report in XML or HMTL output. Reports shows percentage test coverage on different levels like packages, classes and methods (Figure~\ref{fig:coverage1}). 
+Cobertura\footnote{Official webpage: \url{http://cobertura.github.io/cobertura/}} is a freeware tool that checks code coverage metrics, but it also implements Cyclomatic Complexity.  It uses compiled Java class files and generates output report in XML or HMTL output. Reports shows percentage test coverage on different levels like packages, classes and methods (Figure~\ref{fig:coverage1}). 
 
 \begin{figure}[h!]
 	\centering
@@ -134,28 +134,83 @@ JHawk implements size metrics: Lines of Code, Lines of Comments, Lines of Statem
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{RefractorIT}
-[opis]
+\section{RefactorIT}
+RefactorIT provides not only source-code metrics, but also supports automated refactoring process, audits and corrective actions. It is installed as a stand-alone application or as a plug-in to Eclipse or NetBeans. It was commercial tool developed by Aqris company. Since 2008, the RefactorIT is an abandoned project and is freely accessed.  
 
+The plug-in is still available to download on \textit{sourceforge.net} servers\footnote{Official page of RefactorIT - \url{http://refactorit.sourceforge.net/}.}. The detailed user guide has been prepared by the student of Pennsylvania University\footnote{RefactorIT user guide - \url{http://tnijurl.com/0472430909e9/}.}.  
+
+RefactorIT implements large set of metrics:
+\begin{itemize}
+\item size metrics: \ac{LoC}, \ac{CLOC}, \ac{DC}, \ac{EXEC}, \ac{NOT}, \ac{NOTa}, \ac{NOTc}, \ac{NP}, \ac{NOF}, \ac{NOA} (description of these metrics in section~\ref{sec:other-metrics}).
+\item complexity metric:~\ac{CC}
+\item Martin's metrics
+\item \ac{CK metrics} without \ac{LCOM} and \ac{CBO}.
+\end{itemize}
+ 
+RefactorIT generates a report in text, HTML and XML format with values from all selected metrics analyse for all types of level. It gives the possibility of further analysis of metrics based on all the values collected from the entire project or selected package, component or module. 
+ 
+In Eclipse IDE, the values of metrics that  exceeded admissible values are marked on red (Figure~\ref{fig:refactor2}). The exceeded values are also changeable and could be set before starting process of metrics measurement (Figure~\ref{fig:refactor1}). 
+ 
+\begin{figure}[h!]
+ 	\centering
+ 	 \includegraphics[scale=0.6]{img/refactorit1.png} 
+ 	\caption{RefactorIT: choice of metrics used to prepare a final measurement report, there is also a short description of each metrics.}		
+ 	\label{fig:refactor1}
+ \end{figure} 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{img/refactorit2.png}  
+	\caption{RefactorIT: the results of metrics measurement in Eclipse IDE.}		
+	\label{fig:refactor2}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Sonar}
-[opis]
+\section{SonarQube (Sonar)}
+SonarQube (previously known as \textit{``Sonar''}) is open-source platform used to maintain a quality of software. Originally it was designed to analyse software written in Java, but set of additional plug-ins extends possibility to support Android, C, C++, Cobol, C Sharp, Flex, JavaScript, PHP, PL/SQL and Visual Basic. Nowadays, it is the fastest developing platform that supports code metrics. It is used by many software companies and programmer teams. It is fully integrated with Maven, Ant, continuous integration tools (Atlassian Bamboo, Jenkins), IDEs (Eclipse) and bug tracking systems (JIRA).    
+
+The installation files are ready to download from official page of SonarQube\footnote{SonarQube official page - \url{http://www.sonarqube.org}.}. It is also required to install server environment (Tomcat) and database. 
+
+The set of metrics supported in SonarQube is also very rich:
+
+\begin{itemize}
+\item size metrics:  \ac{LoC}, \ac{COM}, \ac{DC}, \ac{NOM}, \ac{EXEC}, number of classes,  number of methods, number of getters and setters methods and code coverage (description of some of these metrics in sections~\ref{sec:other-metrics} and~\ref{sec:codecoverage}).
+\item complexity metric:~\ac{CC}
+\item \ac{CK metrics}
+\item Martin's metrics: \ac{Ca} and \ac{Ce} metric.
+\end{itemize}
+
+The main advantages of SonarQube are efficient way of navigating and elaborated balance in high-level view of dashboard supporting in faults hunting (Figure~\ref{fig:sonar1}). What is more, it is a web-based application, so the overall rules, alerts, exclusions, settings are configurable online. It not only allows to combine metrics altogether but also to mix them with chronological measures (Figure~\ref{fig:sonar2}).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{img/sonar2.png} 
+	\caption{SonarQube dashboard.}		
+	\label{fig:sonar1}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{img/sonar4.png} 
+	\caption{SonarQube chronological metrics measurement.}		
+	\label{fig:sonar2}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SourceMonitor}
 SourceMonitor (SM) is measurement metric tool developed by Campwood software. It has graphical user interface and is a freeware closed-source software which runs only on Windows. There are five different views available to display the results: checkpoint, charts, project, details and method view (Figure~\ref{fig:sourcemonitor}). There are multiple supported languages like Visual Basic, HTML, C, C++, Java, and .NET platform languages family. The results of measurements are exported to XML or CSV format files. The implemented metrics are \ac{LoC}, the ratio of methods per Class, number of classes and interfaces, Cyclomatic Complexity, the percent ratio of statements and \ac{LoC} and percent ratio of comments lines (\cite{indie}).
 
-SourceMonitor is available to download on official website\footnote{\url{http://www.campwoodsw.com/sourcemonitor.html}}.
+SourceMonitor is available to download on official website\footnote{SourceMonitor download place - \url{http://www.campwoodsw.com/sourcemonitor.html}}.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{img/sourcemonitor.png} 
-	\caption{SourceMonitor metric tool}		
+	\caption{SourceMonitor metric tool.}		
 	\label{fig:sourcemonitor}
 \end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{STAN - Structure Analysis for Java} 
@@ -191,11 +246,11 @@ Another interesting feature is customizable reports generation. It gives a detai
 %Dodac trzy/dwa z tych dokumentów!!!
 \section{Summary}
 
-%\section{JDepend}
+%section{JDepend}
 %[opis]-delete
 
 %O tych poniżej może tylko wspomnieć¸ ale niekoniecznie.
-%\section{Findbugs}
-%\section{Checkstyle}
-%\section{PDM}
-%\section{Simian - Similarity analyser}
+%tion{Findbugs}
+%ion{Checkstyle}
+%ction{PDM}
+%ction{Simian - Similarity analyser}
