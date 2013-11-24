@@ -214,7 +214,7 @@ SourceMonitor is available to download on official website\footnote{SourceMonito
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{STAN - Structure Analysis for Java} 
-STAN - Structure Analysis for Java is a tool used to structure analysis for Java language. It visualizes project design and reports its flaws. It supports in code understanding and measure the quality. STAN offers also set of selected metrics that underline essential aspects of code quality. All faults are clearly visualized what is a key feature for non technical target clients. This tool is used by developers to take care of code quality from the beginning. It could be used by project managers as a tool for monitoring and reporting. 
+STAN - Structure Analysis for Java is a tool used to visualizes project design and reports its flaws. It supports in code understanding and measure the quality. STAN offers also set of selected metrics that underline essential aspects of code quality. All faults are clearly visualized what is a key feature for non technical target clients. This tool is used by developers to take care of code quality from the beginning. It could be used by project managers as a tool for monitoring and reporting. 
 
 STAN tool could be downloaded from official website\footnote{STAN official page - \url{http://www.stan4j.com/}}. It is distributed under the community license option without installing a license key for projects up to 100 classes. There are two variants of product: either standalone application or Eclipse IDE plug-in.
 
@@ -241,12 +241,29 @@ Another interesting feature is customizable reports generation. It gives a detai
 
 \section{Summary}
 
-%Dodac trzy/dwa z tych dokumentów!!!
-%section{JDepend}
-%[opis]-delete
+There are much more tools that implements software metrics, however the described set presents the wide range of choice. Some of them are rather out-of-date (command line application: C and C++ Code Counter(CCCC) and CKJM - Chidamber and Kememer Metrics), because it does not visualize the results in tables or charts. What is more, the form of using them is also not comfortable, because it requires additional effort: opening command line, navigating to source files, execution of command and analysing the result in illegible way. What is more, the number of metrics implemented in these tools is rather poor and low.  
 
-%O tych poniżej może tylko wspomnieć¸ ale niekoniecznie.
-%tion{Findbugs}
-%ion{Checkstyle}
-%ction{PDM}
-%ction{Simian - Similarity analyser}
+The next group of tools is standalone applications. Nowadays, the \ac{IDE} for software developers is everyday workspace. It is not comfortable to track the quality of provided code in another, separate application, because when the localization of source files changes, there is need to reconfigure the setting of SourceMonitor again. 
+
+In third group, there are plug-ins for Eclipse \ac{IDE}. Currently, the main drawback of Cobertura and Eclipse Metrics Plug-in is fact that they does not provide any visualization in form of charts and number of implemented metrics is rather low. However, the table view is simple and well-planed, what encourages to use.
+
+JHawk is a professional tools that provides large set of metrics, however it is a shareware tool. It is not profitable, because, the same functionality is implemented in another tools that are free.      
+
+The last three, not mentioned plug-ins, are the leaders of final classification for metrics tools. STAN provides very good visualization on different levels of abstraction and generate histograms for some of metrics. The final report looks very professional and is valuable for project managers, because it emphasize the parts of project that need to be improved.
+
+RefactorIT provides the largest set of software metrics. It generates the report for every class, package or module. It enables to further analysis of data for overall system. Unfortunately, it is not longer improved and developed, so it is matter of time when it becomes incompatible with the newest versions of Eclipse \ac{IDE}. 
+
+The last one is SonarQube that is currently the best proposition for supporting software metrics. It is a open-source tool that during the last two years had 15 releases. It is commonly used in professional and commercial projects. It offers a full service of code analysis and owning the fact that it is run on web server, the results of analysis is shared with the whole development team.  
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l}
+		\includegraphics[scale=0.7]{img/tools.png} \\
+	\end{tabular}	
+		\caption{\textit{Summarize of metrics implemented by set of tools.}}
+		\label{tab:summarytools}
+\end{table}
+
+The Table~\ref{tab:summarytools} shows the summary of what kinds of metrics are implemented in given tool, what types of application are available and in which form the results of measurement are presented.
+
+Summing up, the developers that want to take care of the code quality and measure it using code metrics have a good set of tools that are available for free.  All described in Chapter~\ref{roz:metrics_theory} metrics are implemented apart from the MOOD metrics. 
