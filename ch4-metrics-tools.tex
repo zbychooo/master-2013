@@ -227,21 +227,30 @@ One of the key feature of STAN is computing several metrics. It maps some kinds 
 \item \ac{CK metrics}
 \end{itemize}
 
-Metric violations are prioritized  by weighting its rating with the amount of the artifact's underlying code. The results are showed in the violations view (Figure~\ref{fig:stan}).
+Metric violations are prioritized  by weighting its rating with the amount of the artifact's underlying code. The results are showed in the violations view (Figure~\ref{fig:stan}). The coupling between classes and packages are presented in coupling view (Figure~\ref{fig:stan2}).
 
 Another interesting feature is customizable reports generation. It gives a detailed lists of metric violations in colourful visualized pie chars and underline bad trends in project design\footnote{Sample report is presented here:~\url{http://stan4j.com/sample-report.html}}\cite{stan}.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.55]{img/stan.png} 
-	\caption{STAN - Structure Analysis for Java plug-in for Eclipse IDE.}		
+	\caption{STAN: Pollution view}		
 	\label{fig:stan}
 \end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.45]{img/stan2.png} 
+	\caption{STAN: Coupling view.}		
+	\label{fig:stan2}
+\end{figure}
+
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
 
-There are much more tools that implements software metrics, however the described set presents the wide range of choice. Some of them are rather out-of-date (command line application: C and C++ Code Counter(CCCC) and CKJM - Chidamber and Kememer Metrics), because it does not visualize the results in tables or charts. What is more, the form of using them is also not comfortable, because it requires additional effort: opening command line, navigating to source files, execution of command and analysing the result in illegible way. What is more, the number of metrics implemented in these tools is rather poor and low.  
+There are much more tools that implements software metrics, however the described set presents the wide range of choice. Some of them are rather out-of-date (command line application: C and C++ Code Counter (CCCC) and CKJM -- Chidamber and Kememer Metrics), because it does not visualize the results in tables or charts. What is more, the form of using them is also not comfortable, because it requires additional effort: opening command line, navigating to source files, execution of command and analysing the result in illegible way. What is more, the number of metrics implemented in these tools is rather poor and low.  
 
 The next group of tools is standalone applications. Nowadays, the \ac{IDE} for software developers is everyday workspace. It is not comfortable to track the quality of provided code in another, separate application, because when the localization of source files changes, there is need to reconfigure the setting of SourceMonitor again. 
 
