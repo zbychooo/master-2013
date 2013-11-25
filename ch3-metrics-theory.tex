@@ -12,7 +12,7 @@ Thus, measurement captures information about \textit{attributes} and \textit{ent
 
 Describing the entities by attributes is often used by symbols or numbers. For instance, price is designated as a number of euros, while time of program execution in terms of seconds. Similarly, the satisfaction with national football team  may be ``very good'', ``good'', ``medium'', ``low'', ``very low''. These numbers and phrases reflect human perception of real world. Thus, having to compare the prizes of iPhone and Samsung Galaxy, it is possible to state that one is more expensive than second one, or the attributes (features) of both differs. 
 
-Another term that refers measurement is \textit{calculation}. Calculation is form of interpreting measurement and combing them into a quantified item that reflects some attributes whose value is tried to be understand. For example, the trainer could choose the players for next match basing on result of calculations. These calculations are made basing on attributes of every players and its possibility for facing the opponents attributes. Event though, the results of these calculations do not guarantee winning the champions, but , fortunately, in case of software engineering the results are rather clear.   
+Another term that refers measurement is \textit{calculation}. Calculation is form of interpreting measurement and combing them into a quantified item that reflects some attributes whose value is tried to be understand. For example, the trainer could choose the players for next match basing on result of calculations. These calculations are made basing on attributes of every players and its possibility for facing the opponents attributes. Event though, the results of these calculations do not guarantee winning the champions, but fortunately, in case of software engineering the results are rather clear.   
 
 Nowadays, the measurements become an significant part of software project management. Developers and customers prefer rely on measurement-based charts and graphs to support them what the visibility of project is and if the project is on right track. In order to compare and contrast projects, many companies and organization had created and defined set of standards measurements. It has been done so, because average client is not familiar with software terminology, so measurements could present a picture of progress in general and using understandable terms. For example, when a automotive company asks a software developer to write \ac{CAD} document version control system, the customer usually knows a lot about \ac{CAD} documents, but has no knowledge about compilers, programming languages and hardware needed to run designed software. The measurement should be presented in a way that explain both customer and developer what is progress of project and what the visibility for next days or months is.  
 
@@ -43,7 +43,7 @@ The metrics could be also divided into three categories: product metrics, proces
 \section{Software Quality Model}
 Experienced software developers are able to create a high quality software, however it is possible only when from the beginning all requirements and expectations are clearly defined. Having the overall view it is possible to design the system that has understandable and minimal complex structure. 
 
-However, the situation often changes after first release. It could happen so, because the client expectations were different or have changed, or new functionality need to be added, or the requirements have been clarified. In that case, the system loses its quality and get out of control. Testing, maintaining and extending software become a nightmare for developing team. 
+However, the situation often changes after first release. It could happen so, because the client expectations were different or have changed, or new functionality need to be added, or the requirements have been clarified. In that case, the system loses its quality and gets out of control. Testing, maintaining and extending software become a nightmare for developing team. 
 
 In order to keep development projects on the right track, and decrease the consequences of situations described above, several general software quality models gained the acceptance within the software engineering community. First people that described quality models are McCall and Boehm \cite{rigorous}. Figure \ref{fig:boehmjpg} presents Boehm`s view, while Figure \ref{fig:mccalljpg} illustrates how McCall viewed quality.
 
@@ -85,7 +85,7 @@ From derivation of McCall model, the basic international standard for software q
 \subsection{Functionality}
 Functionality is the main purpose of any software. For certain type of software is relatively easy to define its functionality. However, the more functions a software has, the more complicated it becomes. For example, sales order processing systems should be able to record customer information so that it can be used to reference a sales order.
 
-The main point to note is that functionality is expressed as a totality of essential functions that the software product provides. The presence or absence of some functions in a software product can be verified as either existing or not (given function could be or not be found in software product). The other software lcharacteristics present only some degree, because it cannot be simple stated that it characteristic is presented or not. The ISO-9126 quality model does not help measure overall process but only the software component. The relationship between software functionality within an overall business process is outside the scope.
+The main point to note is that functionality is expressed as a totality of essential functions that the software product provides. The presence or absence of some functions in a software product can be verified as either existing or not (given function could be or not be found in software product). The other software characteristics present only some degree, because it cannot be simple stated that this characteristic is presented or not. The ISO-9126 quality model does not help measure overall process but only the software component. The relationship between software functionality within an overall business process is outside the scope.
 
 There are five software quality criteria that characterize the usefulness of the software in a given environment (Table~\ref{tab:functionality_factor}):
 
@@ -278,7 +278,7 @@ Code coverage analysis is kind of structural testing technique (other names: gla
 
 There are variety of coverage metrics. The paragraphs below contain a description of some fundamental metrics, their strengths, weaknesses and issues. 
 
-\paragraph{Statement coverage metrics} reports every executable statement that is encountered.  Note that a statement does not necessarily correspond to a line of code. Control-flow statements, such as \texttt{if, for} and \texttt{switch} are covered if the expression controlling the flow is covered as well as all the contained statements. Implicit statements, such as an omitted return, are not subject to statement coverage. 
+\paragraph{Statement coverage metric} reports every executable statement that is encountered.  Note that a statement does not necessarily correspond to a line of code. Control-flow statements, such as \texttt{if, for} and \texttt{switch} are covered if the expression controlling the flow is covered as well as all the contained statements. Implicit statements, such as an omitted return, are not subject to statement coverage. 
 
 Advantage of statement coverage is verification of what the written code is expected to do and not to do. It also measures the quality of written code, checks the flow of different paths in the program and it also ensures, if those path are tested or not.
 
@@ -295,7 +295,7 @@ Statement\quad coverage\quad =\quad \frac { number\quad of\quad statement\quad e
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Decision coverage metrics} also known as \textit{branch coverage} or \textit{all-edges coverage}. It covers both the true and false conditions.  A branch is considered as the outcome of a decision and it  simply measures which decision outcomes have been tested. This metrics takes a more in-depth view of the source code than simple statement coverage.
+\paragraph{Decision coverage metric} is also known as \textit{branch coverage} or \textit{all-edges coverage}. It covers both the true and false conditions.  A branch is considered as the outcome of a decision and it  simply measures which decision outcomes have been tested. This metrics takes a more in-depth view of the source code than simple statement coverage.
 
 A decision is taken in if-statement, a loop control statement  or a switch statement and the result of these statements could be either TRUE or FALSE.
 
@@ -358,11 +358,11 @@ a=false, b=true, c=false
 
 Condition coverage is also known as \textit{expression, condition-decision} and \textit{multiple decision coverage}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Path coverage metrics} reports if every possible path in given function has been followed. This path is a unique sequence of branches from the function entry to the exit. It tests all possible combinations of logical conditions. 
+\paragraph{Path coverage metric} reports if every possible path in given function has been followed. This path is a unique sequence of branches from the function entry to the exit. It tests all possible combinations of logical conditions. 
 
 The purpose of path coverage metrics is to ensure that all paths through the program are taken. In sizeable program there will be an enormous number of paths through the program could be executed, so in practice the paths could be limited to those within a single function whether the function is not too big, or i.e. has simply two consecutive branches.
 
-The main advantage of path coverage metrics is accuracy. However, from the other side, the number of path increase exponentially to the number of branches and it is impossible to exercise all of time in small unit of time.  
+The main advantage of path coverage metrics is accuracy. However, from the other side, the number of paths increase exponentially to the number of branches and it is impossible to exercise all of time in small unit of time.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Other coverage metrics} 
@@ -404,8 +404,8 @@ Computational complexity has also impact on the software, so if the complex algo
 McCabe has based its metrics on analysis of some measurement concepts in graph theory. He has  transferred these concepts into domain of software measurement. The terms connected to graph theory have been explained in Chapter~\ref{section:graph_theory} in section: \textit{Graph theory}. The term \textit{cyclomatic number} is explained below (definition from:~\cite{alain}).
 
 \begin{quote}
-\textit{The \ac{CC} number \textbf{v(G)} of a strongly connected directed graph is equal to the
-maximum number of linearly independent cycles.}
+The \ac{CC} number \textbf{v(G)} of a strongly connected directed graph is equal to the
+maximum number of linearly independent cycles.
 \end{quote}\vspace{-1cm}
 
 \begin{equation}
@@ -454,6 +454,8 @@ The low value of \ac{CC} determines that given function is easy to understand. T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Halstead complexity}
+\label{sec:halstead}
+
 The Halstead's metrics were proposed by Maurice Halstead. The main assumption is to determine a quantitative measure of the complexity directly from the operators and operands in the component. Metrics measure program component's complexity directly from source code, because the implementation or expression of the algorithm should reflect the execution independently of a specific platform. The main goal is to identify measurable software properties and its relations.
 
 Halstead metrics are based on interpretation of the source code as a sequence of tokens and classifying them to be either operator or operand.   
@@ -704,4 +706,10 @@ There are also many other software metrics that are commonly used to preventing 
 \textbf{\ac{MC}} indicates density of comments with respect to logical complexity of program $LC=\frac { CC }{ COM } $.
 
 \section{Summary}
-[dodac zawartosc ;)]
+The described metrics supports the software developers to keep their projects on the right track. As a result, the quality of the provided, final product is then more resistant on faults and does not require releasing any additional patches. Metrics are particularly useful when the software is further developed and there is no chance to redefine or rebuild some components of the system.
+
+The main advantage of software metrics is fact that they are able to verify the laws and rules of structural and object-oriented programming. In one phrase, they teach and support the good coding practise that is very important issue when the complex system is implemented and developed.
+
+The aspects of programming and software developing that are measured by presented software metrics does not fully determines the quality of final software product. The difference between languages fundamentals and syntax does require to define or redefine some definitions again. For example, the \ac{DIT} and \ac{NOC} metrics from \ac{CK metrics} does not take into consideration the multi-inheritance.   
+
+Metrics could be treated as useful tool for code understanding, however most of the scientific publications about metrics comes from nineties. It proves that the issue is not interesting matter of study now. What is more, it is still many open cases and new metrics could be defined or existing ones become more detailed.
