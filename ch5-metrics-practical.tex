@@ -3,7 +3,19 @@
 \textit{The purpose of this chapter is to use software metrics to improve the quality of code for exemplary academic project. Basing on tools introduced in Chapter~\ref{roz:metrics-tools} (STAN, RefactorIT and JHawk) and metrics described in Chapter~\ref{roz:metrics_theory}, the project is analysed and it is underlined which aspects need improvements.}
 
 \section{Project description}
-neural network academic project --- opis
+The research made in this chapter are based on academic project of implementing neural network and algorithms that uses neural network to compute the results of its exploratory areas. The Figure~\ref{fig:structureneural} presents coupling between the package. The structure has been generated with use of STAN plug-in for Eclipse \ac{IDE}. 
+
+\begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[scale=1]{img/str.png} 
+ 	\caption{Neural network project structure}		
+ 	\label{fig:structureneural}
+ \end{figure} 
+
+
+
+
+
 
 \section{Metrics analysis}
 The Figure~\ref{fig:wyniki} presents the results of measurement with use of size metrics, object-oriented metric (\ac{CK metrics}) and package metric (Martin's metrics) for neural network project.  
@@ -60,18 +72,29 @@ For program level (L):
 For time to implement (T):
 \[T=\frac { 52699,9 }{ 18 } \approx 2903,88\quad seconds\]
 
-Basing on the results could be stated that implementation of researched package requires 48~minutes and 24~seconds. The obtained result is only theoretical and does not take into consideration any external factors.  
+Basing on the results could be stated that implementation of researched package requires \textit{48~minutes and 24~seconds}. The obtained result is only theoretical and does not take into consideration any external factors.  
 
 \subsubsection*{McCabe's cyclomatic complexity}
 
+Using STAN plug-in, it is possible to calculate average cyclomatic complexity of overall project and for each of the package:
+\begin{verbatim}
+Average cyclomatic complexity of overall project = 2.59
+pl.lodz.p.softcomputing.algorithms = 2.89
+pl.lodz.p.softcomputing.neuronnetworklib = 1.79 
+pl.lodz.p.softcomputing.utilities = 3,64
+pl.lodz.p.softcomputing.main = 1.9
+pl.lodz.p.softcomputing.testers = 2.72
+\end{verbatim}
+
+The complexity should be analysed on method levels, however the ratio on package level shows which package contains the most complex classes and methods.
 
 \section{Summary}
-rozwijac dziedziczenie i go uzyc
+Basing on the results provided by the metric tools it could be concluded that the inheritance mechanism in project is poorly developed. Using inheritance enables to prevent duplicated of code. Another aspect is a fact that the code is not enough documented. It is a very good practise to provide documentation with the system for further development in the future. 
 
-wiecej komentarzy
+The lack of cohesion and not satisfactory result of Martin's metrics indicates that package division and information exchange between methods and classes need to be redesigned and improved. 
 
-cohesion
+The results of the Halstead metric should be treated with caution, because they have not use at design level and are based on very changeable aspects.
 
-paczki słabo - stable vs unstable   oraz distance
+Even if the recommended value of some metric is exceeded it does not mean that it is necessary to refactor the code. The metrics violations are rather a warning about an increased risk of faults appearance and potential problems with further maintenance. 
 
-halstead smieszne i trywialne
+Th resultant values should be considered as a reference point because depending on the specific system recommended values are varied. Because of that fact, many tools enables to modify  recommended values. 
