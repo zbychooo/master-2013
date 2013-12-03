@@ -81,12 +81,17 @@
 \begin{document}
 
 %========[!!!!!!!!!!!!!!!] ============> strona tytułowa [UNCOMMENT!]
-%\includepdf[pages={1}]{title-page-beta.pdf}
+\includepdf[pages={1}]{title-page-beta.pdf}
 
 %spis tresci
-\tableofcontents
-                        
+\tableofcontents       
 %------------------------------------------------------------
+
+\newpage
+\phantomsection \label{bib}
+\addcontentsline{toc}{chapter}{Abstract}
+\include{abstract}
+
 
 %introduction - teza, cel i zakres pracy
 \include{ch1-introduction}
