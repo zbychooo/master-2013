@@ -74,8 +74,11 @@
 }
 
 \usepackage{acronym}
-%\usepackage{rotating} 
- 
+
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
  
 %=======[BEGIN DOCUMENT]===========
 \begin{document}
@@ -114,8 +117,7 @@
                 \newpage
                 \phantomsection \label{bib}
                 \addcontentsline{toc}{chapter}{Bibliography}
-                \include{bibliography}
-
+                \include{bibliography}              
 %------------------------------------------------------------
 %spis rysunkow
                 \newpage
@@ -127,14 +129,13 @@
                 \newpage
                 \phantomsection \label{listoftab}
                 \addcontentsline{toc}{chapter}{List of Tables}
-                \listoftables
+                \listoftables  
                 
 %------------------------------------------------------------
 %skroty
                 \newpage
-                \phantomsection \label{acronyms}
+                \phantomsection \label{acronyms2}
                 \addcontentsline{toc}{chapter}{Acronyms}
-                \include{acronyms}                
+                \include{acronyms}  
 %------------------------------------------------------------
-
 \end{document}

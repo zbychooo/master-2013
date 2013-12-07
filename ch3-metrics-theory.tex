@@ -1,6 +1,6 @@
 \chapter{Theoretical approach to software metrics} \label{roz:metrics_theory}
 
-\textit{This chapter describes the set of commonly use software metrics. It starts from the description of fundamentals of metrics which are measurements. As a next step to understand the metrics, the Software Quality Model has been introduced. It explains the origin of the metrics. The described metrics have been also divided into groups.} 
+This chapter describes the set of commonly use software metrics. It starts from the description of fundamentals of metrics which are measurements. As a next step to understand the metrics, the Software Quality Model has been introduced. It explains the origin of the metrics. The described metrics have been also divided into groups. 
 
 \section{Measurements}
 
@@ -18,7 +18,7 @@ Nowadays, the measurements become an significant part of software project manage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Software metrics division}
-The basic division of software metrics relates to the method of analysis and testing.  The metric could be divided into static and dynamic metrics. Static metrics analyse source code while dynamic determines, separately from the code and testing, the behaviour of a running program. A separate category of metrics are not directly related to software implementations, but the specification requirements of the customer as well as the course of the tests.
+The basic division of software metrics relates to the method of analysis and testing.  The metric could be divided into static and dynamic metrics (Figure~\ref{fig:metrics1}). Static metrics analyse source code while dynamic determines, separately from the code and testing, the behaviour of a running program. A separate category of metrics are not directly related to software implementations, but the specification requirements of the customer as well as the course of the tests.
 
 The static metrics could be divided into sub groups: size metrics, complexity metrics, object-oriented metrics and package metrics. They allow for testing the quality of source code by software developers. These metrics depicts the piece of code needed to be tested or simplify.  
 
@@ -29,7 +29,7 @@ The static metrics could be divided into sub groups: size metrics, complexity me
 	\label{fig:metrics1}
 \end{figure}
 
-The metrics could be also divided into three categories: product metrics, process metrics and project metrics. Product metrics describe the characteristics of the product such as size, complexity, design features, performance, and quality level. Process metrics are used to improve maintenance and development of software, for example: the effectiveness of defecting removal during development, the pattern of testing defect arrival, and the response time of the fix process. Project metrics describe the project characteristics and execution, for example: the number of software developers, the life cycle of the software, cost, productivity, and schedule. Metrics could belong to multiple categories. For example, the quality metrics are both process metrics and project metrics \cite{metrics}. 
+The metrics could be also divided into three categories: product metrics, process metrics and project metrics (Figure~\ref{fig:metrics2}). Product metrics describe the characteristics of the product such as size, complexity, design features, performance, and quality level. Process metrics are used to improve maintenance and development of software, for example: the effectiveness of defecting removal during development, the pattern of testing defect arrival, and the response time of the fix process. Project metrics describe the project characteristics and execution, for example: the number of software developers, the life cycle of the software, cost, productivity, and schedule. Metrics could belong to multiple categories. For example, the quality metrics are both process metrics and project metrics \cite{metrics}. 
 
 \begin{figure}[h!]
 	\centering
@@ -71,15 +71,15 @@ These models focus on the final product (the executable code) and identify the a
 	\label{fig:iso9126}
 \end{figure}
 
-From derivation of McCall model, the basic international standard for software quality measurement was defined. The standard is more commonly referenced by its assigned standard number, ISO-9126. It defines software quality as\textit{ ``the totality of features and characteristics of a software product that bear on its ability to satisfy stated or implied needs''} \cite{ISO9126}. The six factors decompose the quality into: 
+From derivation of McCall model, the basic international standard for software quality measurement was defined. The standard is more commonly referenced by its assigned standard number, ISO-9126 (Figure~\ref{fig:iso9126}). It defines software quality as\textit{ ``the totality of features and characteristics of a software product that bear on its ability to satisfy stated or implied needs''} \cite{ISO9126}. The six factors decompose the quality into: 
 
 \begin{itemize}
-  \item functionality 
-  \item reliability
-  \item usability
-  \item efficiency
-  \item maintainability
-  \item portability   
+  \item functionality, 
+  \item reliability,
+  \item usability,
+  \item efficiency,
+  \item maintainability,
+  \item portability.   
   \end{itemize}
     
 \subsection{Functionality}
@@ -133,7 +133,7 @@ recoverability & ability to bring back a failed system to full functionality \\
 
 
 \subsection{Usability}
-Usability is defined with regard to functionality and refers to the ease of use for a given function. For example, the most common functions are exposed on the ribbon to be easily access. The ability to learn how to use a system is also a major sub characteristic of usability. The Table~\ref{tab:usability_factor} depicts the quality criteria of usability:
+Usability is defined with regard to functionality and refers to the ease of use for a given function. For example, the most common functions are exposed on the ribbon to be easily access. The ability to learn how to use a system is also a major sub characteristic of usability. The Table~\ref{tab:usability_factor} depicts the quality criteria of usability.
 
 \begin{table}[h!]
 	\centering
@@ -141,7 +141,7 @@ Usability is defined with regard to functionality and refers to the ease of use 
 \hline
 {\bf quality criteria} & {\bf explanation} \\
 \hline
-understandability & \parbox[t]{12cm}{easiness of system understanding relating to human-computer\\ interaction methods\\} \\
+understandability & understanding interaction methods between human and computer \\
 \hline
 learnability & learning effort for target users \\
 \hline
@@ -225,7 +225,7 @@ The simplest example is portability term expressed as:
 \begin{equation}
 Portability\quad =\quad 1-\frac { ET }{ ER } 
 \end{equation} 
-where ET is a measure of the resources needed to move the system to the target environment and ER is a measure of the resource needed to create the system for a resident environment. 
+where \textit{ET} is a measure of the resources needed to move the system to the target environment and \textit{ER} is a measure of the resource needed to create the system for a resident environment. 
 
 The interpretation of measurements based on quality factors described in ISO-9126, McCall or Boehm models is rather subjective. The objective measurements are more preferable, however the subjective opinion is better than no feedback.  
 
@@ -240,11 +240,11 @@ Each product of software development could be treated as physical entity and it 
 \ac{LoC} is the simplest metric used to measure the size of the program by counting the lines of code. It is the oldest and most widely used size metric. It is very simple concept that have its basics in Assembler programming where every physical line of code was presenting  one instruction. Nowadays, in high level programming languages, the concept have broken down, because of differences between physical lines and instructions statements. As a result, the several variations have been created in order to improve basic \ac{LoC}:
 
 \begin{itemize}
-\item \ac{LoC} that counts only executable lines,
-\item \ac{LoC} that counts executable lines plus data definitions,
-\item \ac{LoC} that counts executable lines, data definitions and comments,
-\item \ac{LoC} that counts executable lines, data definitions, comments, and job control language,
-\item \ac{LoC} that counts lines as physical lines on a input screen,
+\item \ac{LoC} that counts only executable lines.
+\item \ac{LoC} that counts executable lines plus data definitions.
+\item \ac{LoC} that counts executable lines, data definitions and comments.
+\item \ac{LoC} that counts executable lines, data definitions, comments, and job control language.
+\item \ac{LoC} that counts lines as physical lines on a input screen.
 \item \ac{LoC} that counts lines as terminated by logical delimiters~\cite{metrics}.
 \end{itemize}
 
@@ -257,10 +257,10 @@ The main advantages of \ac{LoC} is automatic counting,  however used only for a 
 In relation to \ac{LoC}, several additional terms has been also defined: 
 \begin{itemize}
 \item KLOC can be used to measure thousands of \ac{LoC}.
-\item KDLOC: 1,000 delivered lines of code
-\item KSLOC: 1,000 source lines of code
-\item MLOC: 1,000,000 lines of code
-\item GLOC: 1,000,000,000 lines of code
+\item KDLOC: 1,000 delivered lines of code.
+\item KSLOC: 1,000 source lines of code.
+\item MLOC: 1,000,000 lines of code.
+\item GLOC: 1,000,000,000 lines of code.
 \end{itemize}
 
 Summing up, the lines of code metric is one of the oldest and most common forms of software measurement, however is ineffective at comparing the same piece of code of implemented functionality in different languages. It cannot measure the productivity of programmer and code quality~\cite{metrics}.
@@ -306,8 +306,8 @@ The decision coverage can be calculated as given below:
 Decision\quad coverage\quad =\quad \frac { Number\quad of\quad decision\quad outcomes\quad exercised }{ Total\quad number\quad of\quad decision\quad outcomes } \cdot 100\%
 \end{equation}
 
-The main goal of decision coverage is to ensure if a program could jump and it jumps to all possible destinations. The most simple example is a complete if statement:
-\begin{lstlisting}[caption=Decision coverage metric passes,label=lst:decisionpass]
+The main goal of decision coverage is to ensure if a program could jump and it jumps to all possible destinations. The most simple example is a complete if statement -- listing~\ref{lst:d1}.
+\begin{lstlisting}[caption=Decision coverage metric passes,label=lst:d1]
 if (x) {
 	print "a";
 } else {
@@ -317,15 +317,15 @@ if (x) {
 This coverage is only achieved here only if \texttt{x} is true on one occasion and false on another.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Condition coverage metric} reports the true or false outcome of each condition separately. It measures the conditions independently of each other. It is similar to decision coverage but has better sensitivity to the control flow. During boolean expression evaluation it is need to ensure that all the terms in the expression are exercised. For example:
+\paragraph{Condition coverage metric} reports the true or false outcome of each condition separately. It measures the conditions independently of each other. It is similar to decision coverage but has better sensitivity to the control flow. During boolean expression evaluation it is need to ensure that all the terms in the expression are exercised -- listing~\ref{lst:d2}.
 
-\begin{lstlisting}[caption=Simple conditional coverage, label=lst:conditional]
+\begin{lstlisting}[caption=Simple conditional coverage, label=lst:d2]
 if (x || y) {
 	//...
 } 
 \end{lstlisting}
 
-In order to achieve the full condition coverage of this expression, the values of x and y are set to each of the four combinations of values they can take:
+In order to achieve the full condition coverage of this expression, the values of \texttt{x} and \texttt{y} are set to each of the four combinations of values they can take:
 
 \begin{verbatim} 
 x=true; y=true;
@@ -334,9 +334,9 @@ x=false; y=true;
 x=false; y=false;
 \end{verbatim} 
 
-The condition coverage gets complicated, and difficult to achieve, as the expression gets complicated. For this reason there are a number of different ways of reporting condition coverage which try to ensure that the most important combinations are covered without worrying about less important combinations.
+The condition coverage gets complicated, and difficult to achieve, as the expression gets complicated. For this reason there are a number of different ways of reporting condition coverage which try to ensure that the most important combinations are covered without worrying about less important combinations -- listing~\ref{lst:d3}.
 
-\begin{lstlisting}[caption=Complex conditional coverage, label=lst:conditional2]
+\begin{lstlisting}[caption=Complex conditional coverage, label=lst:d3]
 if (a || b) && c {
 	//...
 }
@@ -372,7 +372,7 @@ There are also many other variation of coverage metrics like\textbf{ function co
 \subsubsection{Coverage metrics summary}
 The result of using statement coverage, decision coverage, or condition coverage should attain 80\%-90\% coverage or more before releasing. It does assure quality and the effort sacrificed to reach this goal, might be supportive in finding more bugs. The good project avoids setting a goal lower than 80\%.
 
-The coverage analysis help eliminate gaps in a test suite. It does not only provide accurate measurements in order to be useful, but also encourage software developers to analyse those results to the minimum detail and support them in decision how code could be improved ~(\cite{coverage1},~\cite{coverage2}).
+The coverage analysis help eliminate gaps in a test suite. It does not only provide accurate measurements in order to be useful, but also encourage software developers to analyse those results to the minimum detail and support them in decision how code could be improved~\cite{coverage1,coverage2}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Code size metrics summary}
@@ -401,10 +401,10 @@ Computational complexity has also impact on the software, so if the complex algo
  
 \subsection{McCabe's cyclomatic complexity}
 \label{sec:cyclomatic}
-McCabe has based its metrics on analysis of some measurement concepts in graph theory. He has  transferred these concepts into domain of software measurement. The terms connected to graph theory have been explained in Chapter~\ref{section:graph_theory} in section: \textit{Graph theory}. The term \textit{cyclomatic number} is explained below (definition from:~\cite{alain}).
+McCabe has based its metrics on analysis of some measurement concepts in graph theory. He has  transferred these concepts into domain of software measurement. The terms connected to graph theory have been explained in Chapter~\ref{section:graph_theory} in section: \textit{Graph theory}. The term \textit{cyclomatic number} is explained below (definition from~\cite{alain}).
 
 \begin{quote}
-The \ac{CC} number \textbf{v(G)} of a strongly connected directed graph is equal to the
+The \textbf{\ac{CC}} number \textit{v(G)} of a strongly connected directed graph is equal to the
 maximum number of linearly independent cycles.
 \end{quote}\vspace{-1cm}
 
@@ -434,7 +434,7 @@ The Figure~\ref{fig:cyclomatic_complexity} represents the exemplary flow control
 In the case of software, the control flow graph is transformed into a strongly connected graph, so graph cyclomatic number could be formulated as:
 
 \begin{equation}
-v(G) = e - v + p + (1\quad virtual \quad edge)
+v(G) = e - v + p + 1
 \end{equation} 
 
 Furthermore, the individual modules are also taken into consideration, instead of the whole software entity. According to McCabe, the number of connected component $p$ is equal to 1, so the final McCabe equation is formulated as:
@@ -462,39 +462,39 @@ Halstead metrics are based on interpretation of the source code as a sequence of
 
 An operand is the part of a computer instruction which specifies what data is to be manipulated or operated on. The operator, in programming, has the same definition as in mathematics. It is a character that represents the specific action performed on the variables (addition, subtraction, multiplication, comparison, incrementation,...). 
 
-The \textbf{program length (N)} is the sum of the total number of operators and operands in the program:
+The \textbf{program length (\textit{N})} is the sum of the total number of operators and operands in the program:
 \begin{equation}
 N={ N }_{ 1 }+{ N }_{ 2 }
 \end{equation}
 
-The \textbf{vocabulary size (n)} is the sum of the number of unique operators and operands:
+The \textbf{vocabulary size (\textit{n})} is the sum of the number of unique operators and operands:
 \begin{equation}
 n={ n }_{ 1 }+{ n }_{ 2 }
 \end{equation}
 
-The \textbf{program volume (V)} is the contents of program information. It is measured in mathematical bits and is calculated as the program length times the 2-base logarithm of the vocabulary size (n) :
+The \textbf{program volume (\textit{V})} is the contents of program information. It is measured in mathematical bits and is calculated as the program length times the 2-base logarithm of the vocabulary size (\textit{n}) :
 \begin{equation}
 V=N\cdot \log _{ 2 }{ n } 
 \end{equation}
 
-Halstead's volume (V) describes the size of the implementation of an algorithm. The computation of V is based on the number of operations performed and operands handled in the algorithm. The program volume (V) is less sensitive to code layout than the lines-of-code measures\footnote{The definition of Halstead's metrics described above are not a part of complexity metrics, but size metrics, however these metrics are used as a base for metrics describes below which are categorized as complexity metrics. Using Halstead's size metrics is meaningless without Halstead's complexity metrics, so it is a reason why they have been introduced and explained in the same section.}. 
+Halstead's volume (\textit{V}) describes the size of the implementation of an algorithm. The computation of \textit{V} is based on the number of operations performed and operands handled in the algorithm. The program volume (\textit{V}) is less sensitive to code layout than the lines-of-code measures\footnote{The definition of Halstead's metrics described above are not a part of complexity metrics, but size metrics, however these metrics are used as a base for metrics describes below which are categorized as complexity metrics. Using Halstead's size metrics is meaningless without Halstead's complexity metrics, so it is a reason why they have been introduced and explained in the same section.}. 
 
-The \textbf{difficulty level or error proneness (D)} of the program is proportional to the number of unique operators in the program. D is also proportional to the ratio between the total number of operands and the number of unique operands. 
+The \textbf{difficulty level or error proneness (\textit{D})} of the program is proportional to the number of unique operators in the program. \textit{D} is also proportional to the ratio between the total number of operands and the number of unique operands. 
 \begin{equation}
 D=\frac { { n }_{ 1 } }{ 2 } \cdot \frac { { N }_{ 2 } }{ { n }_{ 2 } } 
 \end{equation}
         
-The \textbf{program level (L)} is the inverse of the error proneness of the program. I.e. a low level program is more prone to errors than a high level program.
+The \textbf{program level (\textit{L})} is the inverse of the error proneness of the program. I.e. a low level program is more prone to errors than a high level program.
 \begin{equation}
 L=\frac { 1 }{ D } 
 \end{equation}
         
-The \textbf{effort to implement (E)} is proportional to the volume and to the difficulty level of the program. It is also known as program understanding or elementary mental discrimination.
+The \textbf{effort to implement (\textit{E})} is proportional to the volume and to the difficulty level of the program. It is also known as program understanding or elementary mental discrimination.
 \begin{equation}
 E=V\cdot D=\frac { V }{ L } =\frac { { n }_{ 1 }{ N }_{ 2 }{ Nlog_{ 2 }{ n } } }{ 2{ n }_{ 2 } } 
 \end{equation}
 
-The \textbf{time to implement (T)} is proportional to the effort. Empirical experiments could be used for calibrating this quantity. Halstead has found that dividing the effort by Stroud Number $S$ gives an approximation for the time in seconds.
+The \textbf{time to implement (\textit{T})} is proportional to the effort. Empirical experiments could be used for calibrating this quantity. Halstead has found that dividing the effort by Stroud Number $S$ gives an approximation for the time in seconds.
 \begin{equation}
 T=\frac { E }{ S } =\frac { { n }_{ 1 }{ N }_{ 2 }{ Nlog_{ 2 }{ n } } }{ 2{ n }_{ 2 }S } 
 \end{equation}
@@ -517,7 +517,7 @@ Calculating the ~\ac{CC} value from the McCabe metric is rather easy. This metri
 Object-oriented metrics are a response to the object-oriented programming paradigm that is not reflected in the methods of structure programming measurements.   
 
 \subsection{Chidamber \& Kemerer metrics}
-\ac{CK metrics} is the set of metrics proposed by S.R. Chidamber and C.F Kemerer in 1994. They have explored features characteristic for object-oriented design: class complexity, inheritance, coupling and cohesion between classes.   
+\ac{CK metrics} is the set of metrics proposed by S.R.~Chidamber and C.F Kemerer in 1994. They have explored features characteristic for object-oriented design: class complexity, inheritance, coupling and cohesion between classes.   
 \paragraph{\ac{WMC}} is a weighted sum of method from given class where single weight is represented as McCabe cyclomatic complexity. \ac{WMC} is a sum of all coefficients of \ac{CC} in given class and is expressed in formula:
 
 \begin{equation}
@@ -539,9 +539,13 @@ where $TM$ - number of method in class, $CC_{i}$ - cyclomatic complexity of \tex
 
 Let the class have $n$ methods $m_{1}, m_{2}, \cdots, m_{n}$ where $I_{j}$ is a set of attributes used by $m_{j}$ method. It could be defined: $P=\left\{ \left( { I }_{ i },{ I }_{ j } \right) :{ I }_{ i }\cap { I }_{ j }=0 \right\}$ and $Q=\left\{ \left( { I }_{ i },{ I }_{ j } \right) :{ I }_{ i }\cap { I }_{ j }\neq 0 \right\}$, so: 
 
-\begin{equation}
-LCOM1=P-Q\quad if\quad P>Q\quad or\quad LCOM1=0\quad otherwise
-\end{equation}
+\[LCOM1 = \left\{
+  \begin{array}{lr}
+    P-Q & if P>Q\\
+    0 & otherwise
+  \end{array}
+\right.
+\]
 
 High value indicates that responsibility for given class is too high and class should be divided into smaller, because it is more difficult to test and maintain given class. During next years the \ac{LCOM} metric has been several times redefined. 
 
@@ -569,10 +573,10 @@ where $TM$ is number of method in class, $TA$ is number of attributes in class a
 \ac{MOOD} measures the following object-oriented characteristics:
 
 \begin{itemize}\addtolength{\itemsep}{-0.5\baselineskip}\vspace{-7mm}
-\item  polymorphism:~\ac{PF}
-\item encapsulation (hermatization):~\ac{AHF}~and~\ac{MHF}
-\item inheritance:~\ac{AIF}~and~\ac{MIF}
-\item messaging:~\ac{CF}
+\item  polymorphism:~\ac{PF};
+\item encapsulation (hermatization):~\ac{AHF}~and~\ac{MHF};
+\item inheritance:~\ac{AIF}~and~\ac{MIF};
+\item messaging:~\ac{CF}.
 \end{itemize}\vspace{-10mm}
 
 \paragraph{Polymorphism Factor} defines the degree of classes overridden in subclasses.
@@ -589,34 +593,34 @@ situation for class $c_{i}$. Polymorphism enables to link, by its own invocation
 \begin{equation}
 AHF=\frac { \sum _{ i=1 }^{ TC }{ { a }_{ h }({ c }_{ i }) }  }{ \sum _{ i=1 }^{ TC }{ { a }_{ d }({ c }_{ i }) }  }
 \end{equation}
-where $TC$ - the number of all classes, $c_{i}$ - the following classes, $a_{h}$ - non-public attributes, $a_{d}$ - all defined attributes in $c_{i}$ class. The~\ac{AHF} value should be close to 100\% because it is one of basic assumption of encapsulation that attributes are only accessible using methods (\cite{moodbook}, \cite{nasa}).
+where $TC$ - the number of all classes, $c_{i}$ - the following classes, $a_{h}$ - non-public attributes, $a_{d}$ - all defined attributes in $c_{i}$ class. The~\ac{AHF} value should be close to 100\% because it is one of basic assumption of encapsulation that attributes are only accessible using methods~\cite{moodbook, nasa}.
 
 \paragraph{Method Hiding Factor} defines the degree of method encapsulation in class.
 \begin{equation}
 MHF=\frac { \sum _{ i=1 }^{ TC }{ { m }_{ h }({ c }_{ i }) }  }{ \sum _{ i=1 }^{ TC }{ { m }_{ d }({ c }_{ i }) }  } 
 \end{equation}
-where $TC$ - the number of all classes, $c_{i}$ - the following classes, $m_{h}$ - non-public methods, $m_{d}$ - all defined methods in $c_{i}$ class. The desirable value of~\ac{MHF} should be between 10\% and 25\%, because some of methods are not available at all (\cite{moodbook}, \cite{nasa}).
+where $TC$ - the number of all classes, $c_{i}$ - the following classes, $m_{h}$ - non-public methods, $m_{d}$ - all defined methods in $c_{i}$ class. The desirable value of~\ac{MHF} should be between 10\% and 25\%, because some of methods are not available at all~\cite{moodbook, nasa}.
 
 
 \paragraph{Attribute Inheritance Factor} defines the degree of attributes inheritance usage. It is a ratio of inherited and all available attributes. 
 \begin{equation}
 AIF=\frac { \sum _{ i=1 }^{ TC }{ { a }_{ i }({ c }_{ i }) }  }{ \sum _{ i=1 }^{ TC }{ { a }_{ a }({ c }_{ a }) }  } 
 \end{equation}
-where $TC$ - number of all classes, $a_{a}(c_{i}) = a_{d}(c_{i}) + a{i}(c{i})$ - public attributes in $c_{i}$ class, $a_{i}(c_{i})$ - inherited and not overridden attributes in $c_{i}$ class, $a_{d}(c_{i}) = a_{n}(c_{i}) + a_{o}(c_{i})$ - attributes defined in $c_{i}$ class, where $a_{n}(c_{i})$ - new attributes, $a_{o}(c_{i})$  - inherited and overridden attributes. The typical value of \ac{AIF} is between 50\% and 60\% (\cite{moodbook}, \cite{nasa}).  
+where $TC$ - number of all classes, $a_{a}(c_{i}) = a_{d}(c_{i}) + a{i}(c{i})$ - public attributes in $c_{i}$ class, $a_{i}(c_{i})$ - inherited and not overridden attributes in $c_{i}$ class, $a_{d}(c_{i}) = a_{n}(c_{i}) + a_{o}(c_{i})$ - attributes defined in $c_{i}$ class, where $a_{n}(c_{i})$ - new attributes, $a_{o}(c_{i})$  - inherited and overridden attributes. The typical value of \ac{AIF} is between 50\% and 60\%~\cite{moodbook, nasa}.  
 
 
 \paragraph{Method Inheritance Factor} defines the degree of methods inheritance usage. It is a ratio of inherited and all available methods. 
 \begin{equation}
 MIF=\frac { \sum _{ i=1 }^{ TC }{ { m }_{ i }({ c }_{ i }) }  }{ \sum _{ i=1 }^{ TC }{ { m }_{ a }({ c }_{ a }) }  } 
 \end{equation}
-where $TC$ - number of all classes, $m_{a}(c_{i}) = m_{d}(c_{i}) + m_{i}(c_{i})$ - public methods in $c_{i}$ class, $m_{i}(c_{i})$ - inherited and not overridden methods in $c_{i}$ class, $m_{d}(c_{i}) = m_{n}(c_{i}) + m_{o}(c_{i})$ - methods defined in $c_{i}$ class, where $m_{n}(c_{i})$ - new methods, $m_{o}(c_{i})$  - inherited and overridden methods. The typical \ac{MIF} value is between 65\% and 80\%. The values below indicates weak usage of inheritance, otherwise, the values greater than 80\% complicates the inheritance and code re-usage (\cite{moodbook}, \cite{nasa}).   
+where $TC$ - number of all classes, $m_{a}(c_{i}) = m_{d}(c_{i}) + m_{i}(c_{i})$ - public methods in $c_{i}$ class, $m_{i}(c_{i})$ - inherited and not overridden methods in $c_{i}$ class, $m_{d}(c_{i}) = m_{n}(c_{i}) + m_{o}(c_{i})$ - methods defined in $c_{i}$ class, where $m_{n}(c_{i})$ - new methods, $m_{o}(c_{i})$  - inherited and overridden methods. The typical \ac{MIF} value is between 65\% and 80\%. The values below indicates weak usage of inheritance, otherwise, the values greater than 80\% complicates the inheritance and code re-usage~\cite{moodbook, nasa}. 
 
 
 \paragraph{Coupling Factor} defines the degree of coupling between classes using different methods than inheritance. It is a ratio of number of couplings between classes with use of aggregation, composition, association and maximal number of couplings that could be used in system.  
 \begin{equation}
 CF=\frac { \sum _{ i=1 }^{ TC }{ \left[ \sum _{ j=1 }^{ TC }{ is\_ client\left( { c }_{ i },{ c }_{ j } \right)  }  \right]  }  }{ { TC }^{ 2 }-TC+2\times \sum _{ i=1 }^{ TC }{ dc({ c }_{ i }) }  } 
 \end{equation}	
-where $TC$ - number of all classes, $dc(c_{i})$ - descendants of $c_{i}$ class, ${TC}^{2}-TC$ - maximal number of possible couplings in $TC$ class system, $2\times \sum _{ i=1 }^{ TC }{ dc({ c }_{ i }) }$ - maximal number of coupling using inheritance in system,  $is\_ client\left( { c }_{ i },{ c }_{ j } \right) = 1\quad if\quad { c }_{ c }\Rightarrow { c }_{ s }\wedge { c }_{ c }\neq { c }_{ s }\wedge \neg \left( { c }_{ c }{ \rightarrow c }_{ s } \right) $ otherwise $is\_ client\left( { c }_{ i },{ c }_{ j } \right) =0$. The ${ c }_{ c }\Rightarrow { c }_{ s }$ expression means that class $c_{c}$ has at least one reference to class $c_{s}$. The ${ c }_{ c }{ \rightarrow c }_{ s }$ expression means that  class $c_{c}$ inherits class $c_{s}$. The \ac{CF} value is between 5\% and 15\%. The high value means that system is not flexible and is difficult to maintain and test, because one change in the system requires modifications in another parts of system. Small value means that classes are too complex, not cohered and it realizes too much functionality inside (\cite{moodbook}, \cite{nasa}).  
+where $TC$ - number of all classes, $dc(c_{i})$ - descendants of $c_{i}$ class, ${TC}^{2}-TC$ - maximal number of possible couplings in $TC$ class system, $2\times \sum _{ i=1 }^{ TC }{ dc({ c }_{ i }) }$ - maximal number of coupling using inheritance in system,  $is\_ client\left( { c }_{ i },{ c }_{ j } \right) = 1\quad if\quad { c }_{ c }\Rightarrow { c }_{ s }\wedge { c }_{ c }\neq { c }_{ s }\wedge \neg \left( { c }_{ c }{ \rightarrow c }_{ s } \right) $ otherwise $is\_ client\left( { c }_{ i },{ c }_{ j } \right) =0$. The ${ c }_{ c }\Rightarrow { c }_{ s }$ expression means that class $c_{c}$ has at least one reference to class $c_{s}$. The ${ c }_{ c }{ \rightarrow c }_{ s }$ expression means that  class $c_{c}$ inherits class $c_{s}$. The \ac{CF} value is between 5\% and 15\%. The high value means that system is not flexible and is difficult to maintain and test, because one change in the system requires modifications in another parts of system. Small value means that classes are too complex, not cohered and it realizes too much functionality inside~\cite{moodbook, nasa}.
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Package metrics}
 
@@ -659,7 +663,7 @@ If the abstractness value is closed to 1, the package is unstable and it should 
 D = A + I - 1
 \end{equation}
 
-The ideal value is $D=0$, what means that the more abstract a package is, the more stable it should be because it should have many clients that depend on its abstractions.The desirable value should as low as possible~\cite{martin}. Any package that is not closed to zero is considered as unbalanced and should be reimplemented in order to be more reusable and less sensitive to changes.
+The ideal value is $D=0$, what means that the more abstract a package is, the more stable it should be because it should have many clients that depend on its abstractions. The desirable value should as low as possible~\cite{martin}. Any package that is not closed to zero is considered as unbalanced and should be reimplemented in order to be more reusable and less sensitive to changes.
 
 \section{Other software metrics}
 \label{sec:other-metrics}
